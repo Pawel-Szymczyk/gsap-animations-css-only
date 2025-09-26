@@ -1,0 +1,210 @@
+/* html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.animation-1 {
+  position: relative;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 9px;
+}
+
+.text {
+  color: #dfdcff;
+  font-size: clamp(2rem, 12rem, 5vw);
+  line-height: 1.2;
+  box-sizing: border-box;
+  padding: 5%;
+  width: 100%;
+  text-align: center;
+  perspective: 500px;
+  animation: splitCharacters 2s ease-out infinite alternate;
+}
+
+@keyframes splitCharacters {
+  0%,
+  100% {
+    transform: rotateX(0deg) translateZ(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(90deg) translateZ(-100px);
+    opacity: 0;
+  }
+} */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 1px solid #ccc;
+  position: relative;
+  padding: 20px;
+}
+
+.box-1 {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 25%;
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  position: absolute;
+  left: 20px;
+  animation: slideAndRotateBox 3s ease-in-out 2 alternate;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  /* animation: rotateBox 4s ease-in-out infinite alternate,
+    slideBox 4s ease-in-out infinite alternate; */
+  /* animation-delay: 0.5s; */
+}
+
+@keyframes slideAndRotateBox {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(400px) rotate(360deg);
+  }
+}
+
+.animation-2 .container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  align-content: center;
+  height: auto;
+  width: 23vw;
+}
+
+.sbox {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 25%;
+  background-color: aquamarine;
+}
+
+/* .sbox:nth-child(1) {
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  animation: moveUpDown 1s ease-in-out infinite alternate;
+  animation-delay: 0s;
+}
+
+.sbox:nth-child(2) {
+  background: linear-gradient(114.41deg, #ff6e0a 20.74%, #ffb784 65.5%);
+  animation: moveUpDown 1s ease-in-out infinite alternate;
+  animation-delay: 0.2s;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+} */
+
+.sbox:nth-child(13) {
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  animation: staggerDown 1s ease-in-out 0.3s forwards,
+    staggerUp 2s ease-in-out 4.5s forwards;
+  /* animation-delay: 0s; */
+}
+
+.sbox:nth-child(8),
+.sbox:nth-child(12),
+.sbox:nth-child(14),
+.sbox:nth-child(18) {
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  animation: staggerDown 1s ease-in-out 0.6s forwards,
+    staggerUp 2s ease-in-out 4.2s forwards;
+  /* animation-delay: 0.4s; */
+}
+
+.sbox:nth-child(7),
+.sbox:nth-child(9),
+.sbox:nth-child(17),
+.sbox:nth-child(19) {
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  animation: staggerDown 1s ease-in-out 0.9s forwards,
+    staggerUp 2s ease-in-out 3.9s forwards;
+  /* animation-delay: 0.8s; */
+}
+
+.sbox:nth-child(3),
+.sbox:nth-child(11),
+.sbox:nth-child(15),
+.sbox:nth-child(23) {
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  animation: staggerDown 1s ease-in-out 1.2s forwards,
+    staggerUp 2s ease-in-out 3.6s forwards;
+  /* animation-delay: 1s; */
+}
+
+.sbox:nth-child(2),
+.sbox:nth-child(4),
+.sbox:nth-child(22),
+.sbox:nth-child(24) {
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  animation: staggerDown 1s ease-in-out 1.5s forwards,
+    staggerUp 2s ease-in-out 3.3s forwards;
+  /* animation-delay: 1.2s; */
+}
+.sbox:nth-child(1),
+.sbox:nth-child(5),
+.sbox:nth-child(6),
+.sbox:nth-child(10),
+.sbox:nth-child(16),
+.sbox:nth-child(20),
+.sbox:nth-child(21),
+.sbox:nth-child(25) {
+  background: linear-gradient(114.41deg, #0ae448 20.74%, #abff84 65.5%);
+  animation: staggerDown 1s ease-in-out 1.8s forwards,
+    staggerUp 2s ease-in-out 3s forwards;
+  /* animation-delay: 1.4s; */
+}
+
+@keyframes staggerDown {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+@keyframes staggerUp {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* 
+@keyframes staggerDownUp {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
